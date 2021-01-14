@@ -104,7 +104,7 @@ app.post("/sms", (req, res) => {
       res.end(twiml.toString())
     } else {
       twiml.message(
-        `Error: ${newRequest.ticker.toUpperCase()} is not a valid ticker!`
+        `Error: ${req.body.Body.toUpperCase()} is not a valid ticker!`
       )
       res.writeHead(200, {
         "Content-Type": "text/xml",
